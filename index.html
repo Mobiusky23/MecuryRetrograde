@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水星逆行演示</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>水星逆行现象演示</h1>
+        
+        <div class="canvas-container">
+            <!-- 轨道运行视图 -->
+            <div class="view">
+                <h2>太阳系视角</h2>
+                <canvas id="solarSystem"></canvas>
+            </div>
+            
+            <!-- 地球观测视图 -->
+            <div class="view">
+                <h2>地球观测视角</h2>
+                <canvas id="earthView"></canvas>
+            </div>
+
+            <!-- 水星轨迹视图 -->
+            <div class="view">
+                <h2>水星轨迹</h2>
+                <canvas id="mercuryTrail"></canvas>
+            </div>
+        </div>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <button id="playPauseBtn" class="control-btn">
+                <img src="data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 5.14v13.72c0 .9.97 1.46 1.74.99l10.12-6.87c.7-.47.7-1.51 0-1.98L9.74 4.15C8.97 3.68 8 4.24 8 5.14z' fill='%23007AFF'/%3E%3C/svg%3E" 
+                     alt="播放/暂停" 
+                     class="play-icon">
+            </button>
+            <input type="range" id="timeSlider" min="0" max="100" value="0" class="time-slider">
+            <div class="speed-control">
+                <label>速度：</label>
+                <select id="speedSelect">
+                    <option value="0.5">0.5x</option>
+                    <option value="1" selected>1x</option>
+                    <option value="2">2x</option>
+                </select>
+            </div>
+            <div class="format-control">
+                <select id="formatSelect">
+                    <option value="webm">WebM</option>
+                    <option value="gif">GIF</option>
+                </select>
+            </div>
+            <button id="downloadBtn" class="control-btn download-btn" title="下载动画">
+                <img src="data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z' fill='%23007AFF'/%3E%3C/svg%3E" 
+                     alt="下载" 
+                     class="download-icon">
+            </button>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html> 
